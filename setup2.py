@@ -8,8 +8,10 @@ build_exe_options = {"packages": ["os"],
                     "include_files": [
                         ("C:\\Python34\\Scripts\\chromedriver.exe", "./chromedriver.exe"),
                         ("C:\\Python34\\Scripts\\IEDriverServer.exe", "./IEDriverServer.exe"),
-                        ("e:\\home\\jimzs\\workspace\\myrta\\myrta\\settings.ini", "./settings.ini"),
-                        ("e:\\home\\jimzs\\workspace\\myrta\\myrta\\task.csv", "./task.csv"),
+                        #("e:\\home\\jimzs\\workspace\\myrta\\myrta\\settings.ini", "./settings.ini"),
+                        #("e:\\home\\jimzs\\workspace\\myrta\\myrta\\task.csv", "./task.csv"),
+                        ("e:\\home\\jimzs\\workspace\\myrta\\myrta\\settings2.ini", "./settings2.ini"),
+                        ("e:\\home\\jimzs\\workspace\\myrta\\myrta\\candidate.csv", "./candidate.csv"),
                         ]
 #                       "create_shared_zip": False,
                      }
@@ -20,8 +22,8 @@ base = None
 # if sys.platform == "win32":
 #     base = "Win32GUI"
 
-setup(  name = "myrta",
+setup(  name = "MyDate",
         version = "0.1",
         description = "My RTA!",
         options = {"build_exe": build_exe_options},
-        executables = [Executable("myrta.py", base=base)])
+        executables = [Executable("MyrtaDate.py", base=base)])
