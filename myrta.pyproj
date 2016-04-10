@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{25a6276a-64f8-4f44-9063-b4da684491c9}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>myrta.py</StartupFile>
+    <StartupFile>qlikview.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -39,7 +39,11 @@
     <Compile Include="MyrtaDate.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="qlikview.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="santa_gift.py" />
+    <Compile Include="selenium_unittest.py" />
     <Compile Include="setup.py" />
     <Compile Include="setup2.py">
       <SubType>Code</SubType>
