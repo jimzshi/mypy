@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "myrta", "myrta.pyproj", "{25A6276A-64F8-4F44-9063-B4DA684491C9}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "myFinan", "myFinan\myFinan.pyproj", "{B2D279AD-EC43-4F6A-8B96-ABFF5AF366FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{25A6276A-64F8-4F44-9063-B4DA684491C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{25A6276A-64F8-4F44-9063-B4DA684491C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2D279AD-EC43-4F6A-8B96-ABFF5AF366FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2D279AD-EC43-4F6A-8B96-ABFF5AF366FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
