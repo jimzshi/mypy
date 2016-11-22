@@ -64,7 +64,9 @@ class NetBankBase:
         if(self.web_browser_name == "ie"):
             self.driver = webdriver.Ie()
         elif(self.web_browser_name == "chrome"):
-            self.driver = webdriver.Chrome()
+            option = webdriver.ChromeOptions()
+            option.add_argument(r'user-data-dir=E:\local\etc\webdriver')
+            self.driver = webdriver.Chrome(chrome_options=option)
         elif(self.web_browser_name == "ff"):
             self.driver = webdriver.Firefox()
                 
@@ -95,4 +97,4 @@ if __name__ == '__main__':
     netbank.configure()
     netbank._open_homepage()
     netbank._login()
-    netbank._change_to_transaction()
+    #netbank._change_to_transaction()
