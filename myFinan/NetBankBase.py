@@ -86,15 +86,42 @@ class NetBankBase:
         self.driver.find_element_by_id("btnLogon_field").click()
         time.sleep(self.action_wait_time)
 
-    def _change_to_transaction(self):
-        """ click 'View accounts > Transactions """
-        btn_transactions = self.driver.find_element_by_css_selector("#MainMenu > li:nth-child(2) > ul > li:nth-child(1) > a > strong")
-        btn_transactions.click()
+    def _export_mastercard(self):
+        """ select dates and export transactions for MasterCard Diamond account"""
+        btn_master = self.driver.find_element_by_link_text("MasterCard Diamond")
+        btn_master.click()
         time.sleep(self.action_wait_time)
+
+        # press 'Advanced Search'
+        self.driver.find_element_by_link_text('Advanced search').click()
+        self.driver.find_element_by_css_selector('#ctl00_BodyPlaceHolder_radioSwitchDateRange_field_1_label').click()
+        input_from = self.driver.find_element_by_css_selector('#ctl00_BodyPlaceHolder_fromCalTxtBox_field')
+        input_from.clear()
+        input_from.send_keys('01/10/2016')
+        input_to = self.driver.find_element_by_css_selector('#ctl00_BodyPlaceHolder_toCalTxtBox_field')
+        input_to.clear()
+        input_to.send_keys('01/11/2016')
+        btn_search = self.driver.find_element_by_css_selector('#ctl00_BodyPlaceHolder_lbSearch > strong')
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", btn_search)
+        time.sleep(self.action_wait_time)
+        btn_search.click()
+        time.sleep(self.action_wait_time)
+
+        # export to csv
+        #self.driver.find_element_by_css_selector('#ctl00_CustomFooterContentPlaceHolder_updatePanelExport1 > div > a').click()
+        self.driver.find_element_by_link_text('Export').click()
+        time.sleep(self.action_wait_time)
+        self.driver.find_element_by_css_selector('#ctl00_CustomFooterContentPlaceHolder_updatePanelExport1 > div > div > fieldset > div.FieldGroup > div.FieldWrapper.Width19 > div > div.FieldElement > span > span > span.icon.ddl_selected').click()
+        time.sleep(self.action_wait_time)
+        self.driver.find_element_by_partial_link_text('Excel').click()
+        time.sleep(self.action_wait_time)
+        self.driver.find_element_by_css_selector('#ctl00_CustomFooterContentPlaceHolder_lbExport1').click()
+
+
 
 if __name__ == '__main__':
     netbank = NetBankBase()
     netbank.configure()
     netbank._open_homepage()
     netbank._login()
-    #netbank._change_to_transaction()
+    netbank._export_mastercard()
